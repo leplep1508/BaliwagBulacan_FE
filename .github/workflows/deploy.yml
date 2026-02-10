@@ -23,11 +23,8 @@ jobs:
       - name: Clean npm cache
         run: npm cache clean --force
 
-      - name: Install compatible AJV
-        run: npm install ajv@6 --save-dev
-
-      - name: Install dependencies
-        run: npm install --no-audit --no-fund --legacy-peer-deps
+      - name: Install dependencies (force AJV v6)
+        run: npm install ajv@6 --save-dev --no-audit --no-fund --legacy-peer-deps
 
       - name: Build React app
         run: npm run build
