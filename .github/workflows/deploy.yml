@@ -15,7 +15,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 20
 
       - name: Remove node_modules and lockfile
         run: rm -rf node_modules package-lock.json
@@ -23,8 +23,8 @@ jobs:
       - name: Clean npm cache
         run: npm cache clean --force
 
-      - name: Install dependencies (force AJV v6)
-        run: npm install ajv@6 --save-dev --no-audit --no-fund --legacy-peer-deps
+      - name: Install dependencies (force AJV v8)
+        run: npm install ajv@^8 --save-dev --no-audit --no-fund --legacy-peer-deps
 
       - name: Build React app
         run: npm run build
